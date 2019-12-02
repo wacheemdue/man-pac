@@ -1,0 +1,24 @@
+README for gadget: Manny Pacman
+
+Components:
+	brain:	Adafruit-Pro-Trinket-5V-battery-powered-6V
+	battery:	battery-4xAA
+	drive:	dual-motor-kit-narrow-fast
+	caster:	ball-caster-0.75in
+
+Connections:
+	(brain.D3_0_brain, drive.PWMA_2_drive)
+	(brain.D5_0_brain, drive.PWMB_2_drive)
+	(brain.D4_0_brain, drive.STBY_2_drive)
+	(brain.D6_0_brain, drive.AIN1_2_drive)
+	(brain.D8_0_brain, drive.AIN2_2_drive)
+	(brain.D9_0_brain, drive.BIN1_2_drive)
+	(brain.D10_0_brain, drive.BIN2_2_drive)
+	[brain.+5V_0_brain, drive.VCC_2_drive]
+	[battery.POS_1_battery, brain.VBAT_0_brain, drive.VM_2_drive]
+	[brain.GND_0_brain, brain.GND1_0_brain, drive.GND_2_drive, brain.GND2_0_brain, battery.NEG_1_battery]
+
+Power plan:
+	brain.+5V_out provides power to drive.VCC
+	battery.+6V_out provides power to brain.+VBat
+	battery.+6V_out provides power to drive.VM
